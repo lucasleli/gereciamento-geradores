@@ -117,7 +117,11 @@ while(exibir_menu):
                         print("2 - Não")
                         pergunta = int(input())
                         if (pergunta == 1):
-                            print(gerador.desligar())
+                            if (nome == "G1"):
+                                for gerador in geradores:
+                                    print(gerador.desligar())
+                            else:
+                                print(gerador.desligar())
                             resposta = False
                         elif (pergunta == 2):
                             resposta = False
