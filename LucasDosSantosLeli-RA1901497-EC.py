@@ -103,7 +103,7 @@ while(exibir_menu):
         exibir_menu = False
 
     elif (escolha == 1):
-        nome = input("Informe o Nome do Gerador: ")
+        nome = input("Informe o Nome do Gerador: ").upper()
         print(38 * "=")
         encontrados = 0
         for gerador in geradores:
@@ -119,7 +119,8 @@ while(exibir_menu):
                         if (pergunta == 1):
                             if (nome == "G1"):
                                 for gerador in geradores:
-                                    print(gerador.desligar())
+                                    if (gerador.get_status()):
+                                        print(gerador.desligar())
                             else:
                                 print(gerador.desligar())
                             resposta = False
@@ -169,7 +170,7 @@ while(exibir_menu):
             print(f"{nome} - {nivel_atual}/{nivel_maximo} "+alerta)
 
     elif (escolha == 4):
-        resposta = input("Nome do gerador: ")
+        resposta = input("Nome do gerador: ").upper()
         print(38 * "=")
         encontrados = 0
         for gerador in geradores:
@@ -186,7 +187,7 @@ while(exibir_menu):
         if (encontrados == 0):
             print("Esse gerador não existe!")
     elif (escolha == 5):
-        escolha = input("Informe o Nome do Gerador: ")
+        escolha = input("Informe o Nome do Gerador: ").upper()
         encontrados = 0
         for gerador in geradores:
             if (gerador.get_nome() == escolha):
