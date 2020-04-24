@@ -71,11 +71,14 @@ class Gerador:
         return f"O gerador {self.__nome} foi desligado com sucesso!"
 
 
-g1 = Gerador('G1', 150, 12000, 700)
-g2 = Gerador('G2', 85, 7000, 400)
-g3 = Gerador('G3', 76, 6300, 360)
-g4 = Gerador('G4', 112, 9000, 525)
-geradores = [g1, g2, g3, g4]
+#  CRIAÇÃO DOS OBJETOS - INSTÂNCIAS  #
+######################################
+g1 = Gerador('G1', 150, 12000, 700)  #
+g2 = Gerador('G2', 85, 7000, 400)    #
+g3 = Gerador('G3', 76, 6300, 360)    #
+g4 = Gerador('G4', 112, 9000, 525)   #
+geradores = [g1, g2, g3, g4]         #
+######################################
 
 
 def status_g1():
@@ -86,7 +89,7 @@ def status_g1():
 
 exibir_menu = True
 while(exibir_menu):
-    ###############################################
+    ##########################################################################
     print(38 * "=")
     print("MENU PRINCIPAL")
     print("1 - Acionamento manual de gerador")
@@ -97,11 +100,11 @@ while(exibir_menu):
     print("6 - Sair")
     print(38 * "=")
     escolha = int(input("Opção desejada: "))
-    ###############################################
+    ###########################################################################
     if (escolha == 6):
         print("Aplicativo finalizado.")
         exibir_menu = False
-
+    ###########################################################################
     elif (escolha == 1):
         nome = input("Informe o Nome do Gerador: ").upper()
         print(38 * "=")
@@ -150,13 +153,13 @@ while(exibir_menu):
                 encontrados += 1
         if (encontrados == 0):
             print("Esse gerador não existe!")
-
+    ###########################################################################
     elif (escolha == 2):
         for gerador in geradores:
             nome = gerador.get_nome()
             status = gerador.get_status(1)
             print(f"{nome} - {status}")
-
+    ###########################################################################
     elif (escolha == 3):
         print("STATUS DOS TANQUES:")
         for gerador in geradores:
@@ -168,7 +171,7 @@ while(exibir_menu):
                 alerta = "(ABASTECER)"
 
             print(f"{nome} - {nivel_atual}/{nivel_maximo} "+alerta)
-
+    ###########################################################################
     elif (escolha == 4):
         resposta = input("Nome do gerador: ").upper()
         print(38 * "=")
@@ -186,6 +189,7 @@ while(exibir_menu):
                 encontrados += 1
         if (encontrados == 0):
             print("Esse gerador não existe!")
+    ###########################################################################
     elif (escolha == 5):
         escolha = input("Informe o Nome do Gerador: ").upper()
         encontrados = 0
